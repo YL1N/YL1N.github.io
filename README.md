@@ -15,6 +15,8 @@ Personal academic homepage of Lien Yilin Jiang. Plain HTML and CSS, no build ste
 
 Copy one `<li class="pub">` block in `index.html` and edit the venue badge, title, authors, venue line and links. Wrap your own name in `<strong class="me">`. Use `<span class="venue venue-plain">` for preprints. CCF ranks use `<span class="tag ccf ccf-a">`, `ccf-b` or `ccf-c` (red, yellow, green).
 
+To give a paper a collapsible figure, put the image in `assets/img/figures/`, add a `<button class="fig-toggle" aria-controls="fig-KEY">Figure</button>` to its links row, and add a `<figure class="pub-fig" id="fig-KEY" hidden>` after the row. The figure loads only when opened.
+
 ## Preview locally
 
 ```bash
