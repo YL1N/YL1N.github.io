@@ -9,7 +9,8 @@ Personal academic homepage of Lien Yilin Jiang. Plain HTML and CSS, no build ste
 - `assets/js/main.js` handles the theme toggle and the navigation highlight.
 - `assets/img/profile.jpg` is the portrait. It is shown whole at its own aspect ratio, so any uncropped photo works; update the `width` and `height` attributes of the `<img>` in `index.html` to match.
 
-- `assets/img/logos/` holds the affiliation emblems shown under the About text.
+- `assets/img/logos/` holds the round school emblems used in Education.
+- `assets/img/lockups/` holds the full institution logos (emblem, Chinese and English name) used in the Affiliations & Collaborations cards.
 
 ## Adding a publication
 

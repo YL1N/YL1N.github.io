@@ -287,7 +287,7 @@ h2 {
   line-height: 1.75;
 }
 
-/* Affiliation cards */
+/* Institution cards: each shows the full official logo on a white tile */
 .affils {
   margin-top: 12px;
   display: flex;
@@ -295,43 +295,24 @@ h2 {
   justify-content: center;
   gap: 12px;
 }
-.affils li { flex: 0 0 calc((100% - 36px) / 4); }
+.affils li { flex: 0 0 calc((100% - 24px) / 3); }
 .affils a {
-  height: 100%;
+  height: 96px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 14px;
-  padding: 24px 12px 18px;
+  justify-content: center;
+  padding: 14px 18px;
   border: 1px solid var(--rule);
   border-radius: 8px;
-  background: var(--surface);
-  color: var(--muted);
-  font-size: .8rem;
-  font-weight: 600;
-  line-height: 1.35;
-  text-align: center;
-  transition: border-color .2s, color .2s;
-}
-.affils a:hover {
-  border-color: var(--accent);
-  color: var(--text);
-  text-decoration: none;
-}
-.affils img {
-  flex: none;
-  width: 68px;
-  height: 68px;
-  object-fit: contain;
-  padding: 3px;
-  border-radius: 50%;
   background: #fff;
-  box-shadow: 0 0 0 1px var(--rule);
+  transition: border-color .2s;
 }
-.affils img.wide {
-  width: 104px;
-  padding: 14px 8px;
-  border-radius: 12px;
+.affils a:hover { border-color: var(--accent); }
+.affils img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 56px;
 }
 
 /* Research themes */
@@ -685,6 +666,7 @@ h3.group {
   .name { font-size: 1.6rem; }
   .role { margin-top: 8px; }
   .contacts { grid-column: 1 / -1; }
+  .affils li { flex-basis: calc((100% - 12px) / 2); }
   .contacts { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 20px; }
 }
 
@@ -701,7 +683,8 @@ h3.group {
   section { margin-bottom: 40px; }
   h2 { font-size: 1.3rem; }
 
-  .affils li { flex-basis: calc((100% - 12px) / 2); }
+  .affils li { flex-basis: 100%; }
+  .affils a { height: 84px; }
   .edu-item, .edu-next-box { grid-template-columns: 44px minmax(0, 1fr); gap: 14px; }
   .edu-item { padding-left: 26px; }
   .edu-logo { width: 44px; height: 44px; }
