@@ -489,10 +489,16 @@ h3.group {
 .pub-authors sup { font-size: .7em; line-height: 0; }
 
 .pub-where {
-  margin: 0 0 9px;
+  margin: 0 0 6px;
   font-size: .88rem;
   font-style: italic;
   color: var(--faint);
+}
+
+.pub-tldr {
+  margin: 0 0 10px;
+  font-size: .9rem;
+  line-height: 1.55;
 }
 
 .pub-links {
@@ -515,46 +521,6 @@ h3.group {
   text-decoration: none;
 }
 
-/* Paper figure, collapsed until the reader opens it */
-.fig-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 2px 10px;
-  border: 1px solid var(--rule);
-  border-radius: 999px;
-  background: var(--surface);
-  color: var(--accent);
-  font: inherit;
-  font-size: .8rem;
-  font-weight: 600;
-  cursor: pointer;
-}
-.fig-toggle::after {
-  content: "";
-  width: 5px;
-  height: 5px;
-  border-right: 1.5px solid currentColor;
-  border-bottom: 1.5px solid currentColor;
-  transform: translateY(-2px) rotate(45deg);
-  transition: transform .2s;
-}
-.fig-toggle:hover,
-.fig-toggle[aria-expanded="true"] {
-  border-color: var(--accent);
-  background: var(--accent-soft);
-}
-.fig-toggle[aria-expanded="true"]::after { transform: translateY(1px) rotate(-135deg); }
-
-.pub-fig {
-  margin: 12px 0 2px;
-  padding: 10px;
-  border: 1px solid var(--rule);
-  border-radius: 8px;
-  background: #fff;
-}
-.pub-fig a { display: block; cursor: zoom-in; }
-.pub-fig img { width: 100%; height: auto; }
 
 /* Timeline (experience, education, honors) */
 .timeline { display: grid; gap: 18px; }

@@ -17,17 +17,6 @@
     });
   }
 
-  // Paper figures stay collapsed until their button is pressed.
-  Array.prototype.forEach.call(document.querySelectorAll('.fig-toggle'), function (btn) {
-    var fig = document.getElementById(btn.getAttribute('aria-controls'));
-    if (!fig) return;
-    btn.addEventListener('click', function () {
-      var open = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', open ? 'false' : 'true');
-      fig.hidden = open;
-    });
-  });
-
   // Highlight the section currently in view.
   var links = Array.prototype.slice.call(document.querySelectorAll('.nav a'));
   var sections = links
