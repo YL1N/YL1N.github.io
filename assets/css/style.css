@@ -267,21 +267,6 @@ img { max-width: 100%; display: block; }
   stroke-linejoin: round;
 }
 
-.interests {
-  margin-top: 12px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-}
-.interests li {
-  padding: 3px 11px;
-  border: 1px solid var(--rule);
-  border-radius: 999px;
-  font-size: .82rem;
-  color: var(--muted);
-  background: var(--surface);
-}
-
 /* ---------- Content ---------- */
 .content { min-width: 0; }
 
