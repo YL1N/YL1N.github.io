@@ -308,7 +308,7 @@ h2.sub { margin-top: 36px; }
 .affils {
   margin-top: 12px;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 12px;
 }
 .affils a {
@@ -590,6 +590,7 @@ h3.group {
   h2 { font-size: 1.3rem; }
 
   .affils { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .affils li:last-child:nth-child(odd) { grid-column: 1 / -1; }
   .themes-minor { grid-template-columns: minmax(0, 1fr); }
 
   .pub { grid-template-columns: minmax(0, 1fr); gap: 9px; }
