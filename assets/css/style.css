@@ -111,7 +111,7 @@ img { max-width: 100%; display: block; }
 }
 
 .topbar-inner {
-  max-width: 1120px;
+  max-width: 1240px;
   height: 100%;
   margin: 0 auto;
   padding: 0 28px;
@@ -184,12 +184,12 @@ img { max-width: 100%; display: block; }
 
 /* ---------- Layout ---------- */
 .page {
-  max-width: 1120px;
+  max-width: 1240px;
   margin: 0 auto;
-  padding: 44px 28px 0;
+  padding: 34px 28px 0;
   display: grid;
   grid-template-columns: 240px minmax(0, 1fr);
-  gap: 64px;
+  gap: 52px;
 }
 
 /* ---------- Sidebar ---------- */
@@ -270,7 +270,7 @@ img { max-width: 100%; display: block; }
 /* ---------- Content ---------- */
 .content { min-width: 0; }
 
-section { margin-bottom: 52px; }
+section { margin-bottom: 46px; }
 
 h2 {
   margin: 0 0 18px;
@@ -285,7 +285,6 @@ h2 {
 #about p {
   font-size: 1.03rem;
   line-height: 1.75;
-  max-width: 68ch;
 }
 
 /* Affiliation cards */
@@ -517,7 +516,7 @@ h3.group {
   display: grid;
   grid-template-columns: 56px minmax(0, 1fr);
   gap: 18px;
-  padding: 0 0 28px 32px;
+  padding: 0 0 18px 32px;
 }
 .edu-item::before {
   content: "";
@@ -583,6 +582,11 @@ h3.group {
   font-variant-numeric: tabular-nums;
   color: var(--accent);
 }
+.cert {
+  margin: 8px 0 0;
+  font-size: .95rem;
+}
+
 .edu-note {
   margin: 6px 0 0;
   font-size: .93rem;
