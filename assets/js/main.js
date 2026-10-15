@@ -58,8 +58,14 @@
     });
   }
 
+  // Phones fire "resize" whenever the address bar slides in or out while
+  // scrolling; only a change in width should rebuild the rows, otherwise the
+  // ticker restarts from the beginning and jumps.
+  var rowWidth = window.innerWidth;
   var rowTimer;
   window.addEventListener('resize', function () {
+    if (window.innerWidth === rowWidth) return;
+    rowWidth = window.innerWidth;
     clearTimeout(rowTimer);
     rowTimer = setTimeout(layoutRows, 150);
   });

@@ -297,7 +297,7 @@ h2 {
   gap: 12px;
 }
 .affils li {
-  flex: 1 1 0;
+  flex: var(--w, 1) 1 0;
   min-width: 165px;
 }
 .affils a {
@@ -328,10 +328,12 @@ h2 {
 }
 .affils-viewport.ticker li {
   flex: 0 0 auto;
-  width: 214px;
+  width: calc(200px * var(--w, 1));
   padding-right: 12px;
 }
-.affils-viewport.ticker:hover .affils { animation-play-state: paused; }
+@media (hover: hover) {
+  .affils-viewport.ticker:hover .affils { animation-play-state: paused; }
+}
 @keyframes affils-ticker {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
