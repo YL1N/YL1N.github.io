@@ -34,6 +34,37 @@
     }
   });
 
+  // Each group of institution logos stays on one row. A row that does not fit
+  // scrolls slowly as a ticker, or becomes swipeable for reduced-motion users.
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var viewports = Array.prototype.slice.call(document.querySelectorAll('.affils-viewport'));
+
+  function layoutRows() {
+    viewports.forEach(function (vp) {
+      var list = vp.querySelector('.affils');
+      Array.prototype.forEach.call(list.querySelectorAll('[data-clone]'), function (n) { list.removeChild(n); });
+      vp.classList.remove('ticker', 'scroll');
+      if (list.scrollWidth <= list.clientWidth + 1) return;
+      if (reduceMotion.matches) { vp.classList.add('scroll'); return; }
+      Array.prototype.slice.call(list.children).forEach(function (li) {
+        var copy = li.cloneNode(true);
+        copy.setAttribute('data-clone', '');
+        copy.setAttribute('aria-hidden', 'true');
+        Array.prototype.forEach.call(copy.querySelectorAll('a'), function (link) { link.tabIndex = -1; });
+        list.appendChild(copy);
+      });
+      vp.classList.add('ticker');
+      list.style.setProperty('--ticker-duration', Math.round(list.scrollWidth / 2 / 35) + 's');
+    });
+  }
+
+  var rowTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(rowTimer);
+    rowTimer = setTimeout(layoutRows, 150);
+  });
+  layoutRows();
+
   // Highlight the section currently in view.
   var links = Array.prototype.slice.call(document.querySelectorAll('.nav a'));
   var sections = links
