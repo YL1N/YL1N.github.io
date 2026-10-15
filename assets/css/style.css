@@ -287,7 +287,7 @@ h2 {
   line-height: 1.75;
 }
 
-/* Institution cards: each shows the full official logo on a white tile */
+/* Institution logos: the full official logo, no frame */
 .affils {
   margin-top: 12px;
   display: flex;
@@ -298,17 +298,14 @@ h2 {
 .affils li { flex: 0 0 calc((100% - 24px) / 3); }
 .affils-4 li { flex-basis: calc((100% - 36px) / 4); }
 .affils a {
-  height: 96px;
+  height: 76px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 18px;
-  border: 1px solid var(--rule);
-  border-radius: 8px;
-  background: #fff;
-  transition: border-color .2s;
+  padding: 8px 12px;
+  transition: opacity .2s;
 }
-.affils a:hover { border-color: var(--accent); }
+.affils a:hover { opacity: .75; }
 .affils img {
   width: auto;
   height: auto;
@@ -413,12 +410,13 @@ h3.group {
   object-fit: contain;
   object-position: left center;
 }
-.venue-logo .logo-dark { display: none; }
-:root[data-theme="dark"] .venue-logo .logo-light { display: none; }
-:root[data-theme="dark"] .venue-logo .logo-dark { display: inline; }
+/* Logos with dark lettering have a light version for the dark theme */
+.logo-dark { display: none; }
+:root[data-theme="dark"] .logo-light { display: none; }
+:root[data-theme="dark"] .logo-dark { display: inline; }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .venue-logo .logo-light { display: none; }
-  :root:not([data-theme="light"]) .venue-logo .logo-dark { display: inline; }
+  :root:not([data-theme="light"]) .logo-light { display: none; }
+  :root:not([data-theme="light"]) .logo-dark { display: inline; }
 }
 
 .venue {
@@ -739,7 +737,7 @@ h3.group {
   h2 { font-size: 1.3rem; }
 
   .affils li, .affils-4 li { flex-basis: 100%; }
-  .affils a { height: 84px; }
+  .affils a { height: 68px; }
   .edu-item, .edu-next-box { grid-template-columns: 44px minmax(0, 1fr); gap: 14px; }
   .edu-item { padding-left: 26px; }
   .edu-logo { width: 44px; height: 44px; }
