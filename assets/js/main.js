@@ -17,6 +17,23 @@
     });
   }
 
+  // In-page links scroll to their target without writing "#section" into the
+  // address bar, so reloading the page does not jump back to that section.
+  document.addEventListener('click', function (e) {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var a = e.target.closest ? e.target.closest('a[href^="#"]') : null;
+    if (!a) return;
+    var target = document.getElementById(a.getAttribute('href').slice(1));
+    if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView({ block: 'start' });
+    if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+    if (target.classList.contains('pub')) {
+      target.classList.add('is-target');
+      setTimeout(function () { target.classList.remove('is-target'); }, 2000);
+    }
+  });
+
   // Highlight the section currently in view.
   var links = Array.prototype.slice.call(document.querySelectorAll('.nav a'));
   var sections = links

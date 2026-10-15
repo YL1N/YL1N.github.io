@@ -388,7 +388,8 @@ h3.group {
 }
 .pubs .pub:last-child { border-bottom: 0; }
 
-.pub:target .pub-title { color: var(--accent); }
+.pub:target .pub-title,
+.pub.is-target .pub-title { color: var(--accent); }
 
 .pub-venue {
   display: flex;
