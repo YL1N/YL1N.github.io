@@ -481,8 +481,33 @@ h3.group {
   letter-spacing: .02em;
   white-space: nowrap;
 }
-/* Oral: black and gold with a star and a slow sheen, so it stands apart from the CCF pills */
+/* Oral: gold outline with a star, one step below the award badge */
 .tag-oral {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 1px 8px 1px 6px;
+  border-radius: 4px;
+  background: transparent;
+  color: #9a7412;
+  box-shadow: inset 0 0 0 1px #c9a227;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.tag-oral::before {
+  content: "\2605";
+  font-size: .85em;
+  line-height: 1;
+}
+:root[data-theme="dark"] .tag-oral { color: #e0bd55; box-shadow: inset 0 0 0 1px #b8962e; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .tag-oral { color: #e0bd55; box-shadow: inset 0 0 0 1px #b8962e; }
+}
+
+/* Award (best paper and similar): black and gold with a star and a slow sheen */
+.tag-award {
   position: relative;
   overflow: hidden;
   display: inline-flex;
@@ -498,12 +523,12 @@ h3.group {
   letter-spacing: .09em;
   text-transform: uppercase;
 }
-.tag-oral::before {
+.tag-award::before {
   content: "\2605";
   font-size: .85em;
   line-height: 1;
 }
-.tag-oral::after {
+.tag-award::after {
   content: "";
   position: absolute;
   top: 0;
@@ -512,9 +537,9 @@ h3.group {
   width: 40%;
   background: linear-gradient(100deg, transparent, rgba(255, 238, 180, .55), transparent);
   transform: skewX(-20deg);
-  animation: oral-sheen 4s ease-in-out infinite;
+  animation: award-sheen 4s ease-in-out infinite;
 }
-@keyframes oral-sheen {
+@keyframes award-sheen {
   0%, 65% { left: -60%; }
   100% { left: 130%; }
 }
@@ -789,7 +814,7 @@ h3.group {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .tag-oral::after { display: none; }
+  .tag-award::after { display: none; }
 }
 
 @media print {
