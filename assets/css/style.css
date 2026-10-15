@@ -287,30 +287,28 @@ h2 {
   line-height: 1.75;
 }
 
-/* Institution logos: the full official logo, no frame */
+/* Institution logos: the full official logo, no frame, all at one height */
 .affils {
-  margin-top: 12px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px 32px;
 }
-.affils li { flex: 0 0 calc((100% - 24px) / 3); }
-.affils-4 li { flex-basis: calc((100% - 36px) / 4); }
+.affils li { display: flex; justify-content: center; }
+.affils li.wide { grid-column: 1 / -1; }
 .affils a {
-  height: 76px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 12px;
+  max-width: 100%;
   transition: opacity .2s;
 }
 .affils a:hover { opacity: .75; }
 .affils img {
+  height: 60px;
   width: auto;
-  height: auto;
   max-width: 100%;
-  max-height: 56px;
+  object-fit: contain;
 }
 
 /* Research themes */
@@ -719,7 +717,6 @@ h3.group {
   .name { font-size: 1.6rem; }
   .role { margin-top: 8px; }
   .contacts { grid-column: 1 / -1; }
-  .affils li, .affils-4 li { flex-basis: calc((100% - 12px) / 2); }
   .contacts { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 20px; }
 }
 
@@ -736,8 +733,8 @@ h3.group {
   section { margin-bottom: 40px; }
   h2 { font-size: 1.3rem; }
 
-  .affils li, .affils-4 li { flex-basis: 100%; }
-  .affils a { height: 68px; }
+  .affils { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  .affils img { height: 46px; }
   .edu-item, .edu-next-box { grid-template-columns: 44px minmax(0, 1fr); gap: 14px; }
   .edu-item { padding-left: 26px; }
   .edu-logo { width: 44px; height: 44px; }
