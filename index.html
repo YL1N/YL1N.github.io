@@ -171,6 +171,8 @@
       <section id="news">
         <h2>News</h2>
         <ul class="news">
+          <li><time datetime="2026-10">Oct 2026</time><span>Our new work <a href="#pub-hachimi2">HACHIMI-II</a>, which models learner behavior for faithful student simulation, is available on <a href="https://arxiv.org/abs/2610.19654">arXiv</a>.</span></li>
+          <li><time datetime="2026-10">Oct 2026</time><span>Our new work on <a href="#pub-agent-replies">unusable replies of LLM agents</a> is available on <a href="https://arxiv.org/abs/2610.19659">arXiv</a>.</span></li>
           <li><time datetime="2026-09">Sep 2026</time><span>Started my MPhil in Artificial Intelligence at HKUST(GZ) and joined the Di² Lab.</span></li>
           <li><time datetime="2026-08">Aug 2026</time><span><a href="#pub-ade">ADE</a> was accepted to the EMNLP 2026 main conference.</span></li>
           <li><time datetime="2026-08">Aug 2026</time><span>Our new work <a href="#pub-elbench">ELBench</a>, a multi-dimensional benchmark for education-facing LLMs, is available on <a href="https://arxiv.org/abs/2608.09548">arXiv</a>.</span></li>
@@ -189,8 +191,9 @@
             <h3>AI for education</h3>
             <p>
               I study how large language models can represent learners, support teachers, and be evaluated for real teaching use.
-              <a href="#pub-hachimi">HACHIMI</a> and <a href="#pub-ade">ADE</a> build student personas and training data for
-              this purpose, <a href="#pub-elbench">ELBench</a> evaluates education-facing models, and
+              <a href="#pub-hachimi">HACHIMI</a> generates student personas, <a href="#pub-hachimi2">HACHIMI-II</a> simulates how a
+              given learner behaves, <a href="#pub-ade">ADE</a> builds training data for educational objectives,
+              <a href="#pub-elbench">ELBench</a> evaluates education-facing models, and
               <a href="#pub-artmentor">ArtMentor</a> studies how teachers work with a multimodal model in art assessment.
             </p>
           </article>
@@ -213,7 +216,8 @@
             <article class="theme theme-minor">
               <h3>Other interests</h3>
               <p>
-                LLM agents, recommender systems, and recursive self-improvement (RSI).
+                LLM agents, recommender systems, and recursive self-improvement (RSI). On agents, our recent work
+                measures and reduces <a href="#pub-agent-replies">unusable agent replies</a>.
               </p>
             </article>
           </div>
@@ -342,6 +346,37 @@
 
         <h3 class="group">Preprints</h3>
         <ol class="pubs">
+          <li class="pub" id="pub-hachimi2">
+            <div class="pub-venue">
+              <span class="venue venue-plain">arXiv 2026</span>
+            </div>
+            <div class="pub-body">
+              <h4 class="pub-title">HACHIMI-II: From Role-Play to Learner Behavior Modeling for Faithful Student Simulation</h4>
+              <p class="pub-authors"><strong class="me">Yilin Jiang</strong>, Fei Tan, Xuanyu Yin, Jing Leng, Aimin Zhou</p>
+              <p class="pub-where">arXiv:2610.19654</p>
+              <p class="pub-tldr">Recasts student simulation as predicting a learner's next action from an explicit learner state, shrinking the ability gap to real students 2.4–8.4× relative to the strongest baseline.</p>
+              <p class="pub-links">
+                <a href="https://arxiv.org/abs/2610.19654">arXiv</a>
+                <a href="https://github.com/YL1N/HACHIMI-II">Code</a>
+              </p>
+            </div>
+          </li>
+
+          <li class="pub" id="pub-agent-replies">
+            <div class="pub-venue">
+              <span class="venue venue-plain">arXiv 2026</span>
+            </div>
+            <div class="pub-body">
+              <h4 class="pub-title">Measuring and Reducing Unusable Replies of LLM Agents</h4>
+              <p class="pub-authors"><strong class="me">Yilin Jiang</strong>, Fei Tan, Xuanyu Yin, Guanchu Wang, Xia Hu, Yutao Yue</p>
+              <p class="pub-where">arXiv:2610.19659</p>
+              <p class="pub-tldr">Measures whether the replies LLM agents hand back are usable by the requester. 54% of 480 replies from eight models fail, and rewriting with a second model lowers the failure rate to 0.36.</p>
+              <p class="pub-links">
+                <a href="https://arxiv.org/abs/2610.19659">arXiv</a>
+              </p>
+            </div>
+          </li>
+
           <li class="pub" id="pub-elbench">
             <div class="pub-venue">
               <span class="venue venue-plain">arXiv 2026</span>
