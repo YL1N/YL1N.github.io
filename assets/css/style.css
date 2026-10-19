@@ -363,35 +363,31 @@ h2 {
 }
 .affils-viewport.scroll { overflow-x: auto; }
 
-/* Research themes */
-.themes { display: grid; gap: 14px; }
-
+/* Research: same two-column grid and hairlines as the publication list */
+.themes { display: grid; }
 .theme {
-  padding: 18px 20px;
-  background: var(--surface);
-  border: 1px solid var(--rule);
-  border-left: 3px solid var(--accent);
-  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 148px minmax(0, 1fr);
+  gap: 20px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--rule);
 }
+.theme:first-child { padding-top: 4px; }
+.theme:last-child { border-bottom: 0; }
 .theme h3 {
-  margin: 0 0 6px;
-  font-size: 1.02rem;
-  font-weight: 650;
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.04rem;
+  font-weight: 700;
+  line-height: 1.5;
 }
 .theme p {
   margin: 0;
   font-size: .95rem;
-  color: var(--muted);
 }
 .theme a { font-weight: 600; }
-
-/* Secondary directions sit side by side under the two main lines */
-.themes-minor {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-}
-.theme-minor { border-left-color: var(--rule); }
+.theme-minor h3,
+.theme-minor p { color: var(--muted); }
 
 /* News */
 .news { display: grid; gap: 10px; }
@@ -812,7 +808,7 @@ h3.group {
   .edu-item { padding-left: 26px; }
   .edu-logo { width: 44px; height: 44px; }
   .edu-next-box { padding: 12px; }
-  .themes-minor { grid-template-columns: minmax(0, 1fr); }
+  .theme { grid-template-columns: minmax(0, 1fr); gap: 4px; }
 
   .pub { grid-template-columns: minmax(0, 1fr); gap: 9px; }
   .pub-venue { flex-direction: row; flex-wrap: wrap; align-items: center; }
