@@ -304,7 +304,7 @@ h2 {
 
 /* Institution logos: one row per group, no frame */
 .affils-viewport {
-  --logo-h: 39px;
+  --logo-h: 48px;
   margin-top: 12px;
   overflow: hidden;
 }
@@ -347,7 +347,7 @@ h2 {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-.affils-viewport.ticker li { padding-right: 48px; }
+.affils-viewport.ticker li { padding-right: 40px; }
 @media (hover: hover) {
   .affils-viewport.ticker:hover .affils { animation-play-state: paused; }
 }
@@ -803,6 +803,7 @@ h3.group {
   .edu-logo { width: 44px; height: 44px; }
   .edu-next-box { padding: 12px; }
   .theme { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .affils-viewport { --logo-h: 42px; }
 
   .pub { grid-template-columns: minmax(0, 1fr); gap: 9px; }
   .pub-venue { flex-direction: row; flex-wrap: wrap; align-items: center; }
