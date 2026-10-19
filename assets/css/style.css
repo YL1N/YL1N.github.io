@@ -304,34 +304,31 @@ h2 {
 
 /* Institution logos: one row per group, no frame */
 .affils-viewport {
+  --logo-h: 39px;
   margin-top: 12px;
   overflow: hidden;
 }
+/* Every logo shares one sizing rule (main.js sets --k from its shape), so
+   the emblems read at about the same size in both rows. */
 .affils {
   display: flex;
-  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
 }
-.affils li {
-  flex: var(--w, 1) 1 0;
-  min-width: 165px;
-}
+.affils li { flex: none; }
 .affils a {
   height: 76px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 8px 12px;
   transition: opacity .2s;
 }
 .affils a:hover { opacity: .75; }
 .affils img {
   width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 56px;
+  height: calc(var(--logo-h) * var(--k, 1));
+  max-width: none;
 }
-
-/* A row that does not fit becomes a slow ticker (main.js adds the class and a copy of the logos) */
 .affils-viewport.ticker {
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
   mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
@@ -340,6 +337,7 @@ h2 {
 .affils-viewport.ticker .affils {
   width: max-content;
   gap: 0;
+  justify-content: flex-start;
   animation: affils-ticker var(--ticker-duration, 30s) linear infinite;
   will-change: transform;
   -webkit-backface-visibility: hidden;
@@ -349,11 +347,7 @@ h2 {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-.affils-viewport.ticker li {
-  flex: 0 0 auto;
-  width: calc(200px * var(--w, 1));
-  padding-right: 12px;
-}
+.affils-viewport.ticker li { padding-right: 48px; }
 @media (hover: hover) {
   .affils-viewport.ticker:hover .affils { animation-play-state: paused; }
 }

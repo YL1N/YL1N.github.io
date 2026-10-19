@@ -39,6 +39,14 @@
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   var viewports = Array.prototype.slice.call(document.querySelectorAll('.affils-viewport'));
 
+  // Size each logo by its shape: wide lockups get a little less height, so
+  // every emblem reads at about the same size whichever row it sits in.
+  Array.prototype.forEach.call(document.querySelectorAll('.affils li'), function (li) {
+    var img = li.querySelector('img');
+    var ratio = img.getAttribute('width') / img.getAttribute('height');
+    li.style.setProperty('--k', Math.pow(4 / ratio, 0.3).toFixed(3));
+  });
+
   function layoutRows() {
     viewports.forEach(function (vp) {
       var list = vp.querySelector('.affils');
